@@ -57,6 +57,14 @@ export const CHAPTER_QUESTION_BANKS = {
   "math:1:3m": MATH_3M["Relations and Functions"],
   "math:Inverse Trigonometric Functions:3m": MATH_3M["Inverse Trigonometric Functions"],
   "math:2:3m": MATH_3M["Inverse Trigonometric Functions"],
+  "math:Matrices:3m": MATH_3M["Matrices"],
+  "math:Continuity & Differentiability:3m": MATH_3M["Continuity & Differentiability"],
+  "math:Continuity and Differentiability:3m": MATH_3M["Continuity & Differentiability"],
+  "math:Application of Derivatives:3m": MATH_3M["Application of Derivatives"],
+  "math:Integrals:3m": MATH_3M["Integrals"],
+  "math:Vector Algebra:3m": MATH_3M["Vector Algebra"],
+  "math:Three Dimensional Geometry:3m": MATH_3M["Three Dimensional Geometry"],
+  "math:Probability:3m": MATH_3M["Probability"],
 
   // ===== Physics — Electric Charges and Fields & Electrostatic Potential and
   // Capacitance. Register every label spelling used by the two flows + ch-no.
