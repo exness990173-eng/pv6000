@@ -268,9 +268,9 @@ export default function QuestionPatterns() {
     || null;
   const freeCount = (explicitList && !isMath6p4 && !FULLY_UNLOCKED.includes(subjectId)) ? FREE_COUNT[subjectId]?.[activePattern] : undefined;
   const trialSubject = TRIAL_SUBJECTS.includes(subjectId) && !FULLY_UNLOCKED.includes(subjectId);
-  // Generic groups block: MCQ/FBK free only the first group; Maths 2M/3M/5M use the
-  // per-pattern free count; everything else beyond the count is locked.
-  const groupFreeCount = (FULLY_UNLOCKED.includes(subjectId) || (subjectId === "math" && activePattern === "5m"))
+  // Generic groups block: MCQ/FBK free only the first group; Maths 2M/3M/5M are
+  // fully unlocked; everything else beyond the per-pattern count is locked.
+  const groupFreeCount = (FULLY_UNLOCKED.includes(subjectId) || (subjectId === "math" && ["2m", "3m", "5m"].includes(activePattern)))
     ? undefined
     : (isMcqFbk ? 1 : FREE_COUNT[subjectId]?.[activePattern]);
   const countFrac = activeMeta?.count && /\bof\b/i.test(activeMeta.count)
