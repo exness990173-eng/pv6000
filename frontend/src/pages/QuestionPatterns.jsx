@@ -243,11 +243,19 @@ export default function QuestionPatterns() {
         .map((r) => ({ key: r.chapter, label: r.chapter, count: r.vals[partKey], match: (q) => q.chapter === r.chapter }))
     : [];
 
-  // MCQ & FBK -> chapter RANGE groups (Physics/Chemistry/Maths); other tabs -> per-chapter list
+  // MCQ & FBK -> chapter RANGE groups (Physics/Chemistry/Maths); other tabs -> per-chapter list.
+  // The first range group opens a specific chapter's MCQ/FBK question bank.
   const isMcqFbk = activePattern === "mcq" || activePattern === "fbk";
+  const RANGE_TARGET = {
+    physics: { mcq: "Electric Charges & Fields", fbk: "Electric Charges & Fields" },
+    chemistry: { mcq: "Solutions", fbk: "Solutions" },
+    math: { mcq: "Relations and Functions", fbk: "Inverse Trigonometric Functions" },
+  };
+  const rangeTarget = RANGE_TARGET[subjectId]?.[activePattern];
   const rangeGroups = isMcqFbk && RANGE_GROUPS[subjectId]
-    ? RANGE_GROUPS[subjectId].map((r) => ({
+    ? RANGE_GROUPS[subjectId].map((r, idx) => ({
         key: r.key, label: r.label, note: r.note, hideCount: true,
+        openChapter: idx === 0 ? rangeTarget : undefined,
         match: (q) => { const n = CHAPTER_NO[q.chapter] || 0; return n >= r.min && n <= r.max; },
       }))
     : null;
@@ -400,7 +408,7 @@ export default function QuestionPatterns() {
                   <button
                     key={g.key}
                     data-testid={`chapter-group-${g.key}`}
-                    onClick={() => (isPCM ? openQ(g.label, g.qno) : setSelectedKey(active ? null : g.key))}
+                    onClick={() => (isPCM ? openQ(g.openChapter || g.label, g.qno) : setSelectedKey(active ? null : g.key))}
                     className={`group flex w-full items-center gap-3 rounded-xl border px-4 py-3 text-left transition-all hover:-translate-y-0.5 hover:shadow-md ${
                       active ? "border-blue-500 bg-blue-50" : "border-slate-200 bg-white"
                     }`}

@@ -155,18 +155,26 @@ export const CHAPTER_QUESTION_BANKS = {
   "physics:Electric Charges & Fields:A": ECF_MCQ,
   "physics:Electric Charges and Fields:A": ECF_MCQ,
   "physics:1:A": ECF_MCQ,
+  "physics:Electric Charges & Fields:mcq": ECF_MCQ,
+  "physics:Electric Charges and Fields:mcq": ECF_MCQ,
+  "physics:Electric Charges & Fields:fbk": ECF_MCQ,
+  "physics:Electric Charges and Fields:fbk": ECF_MCQ,
 
   // ===== Chemistry — Solutions · 1 Mark MCQs (Part A) =====
   "chemistry:Solutions:A": SOLUTIONS_MCQ,
   "chemistry:1:A": SOLUTIONS_MCQ,
+  "chemistry:Solutions:mcq": SOLUTIONS_MCQ,
+  "chemistry:Solutions:fbk": SOLUTIONS_MCQ,
 
   // ===== Maths — Relations and Functions · 1 Mark MCQs (Part A) =====
   "math:Relations and Functions:A": RF_MCQ,
   "math:1:A": RF_MCQ,
+  "math:Relations and Functions:mcq": RF_MCQ,
 
   // ===== Maths — Inverse Trigonometric Functions · Fill in the Blanks (Part A) =====
   "math:Inverse Trigonometric Functions:A": INVTRIG_MCQ,
   "math:2:A": INVTRIG_MCQ,
+  "math:Inverse Trigonometric Functions:fbk": INVTRIG_MCQ,
 };
 
 export function getChapterBank(subjectId, ch, mark) {
