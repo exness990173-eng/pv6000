@@ -843,7 +843,110 @@ const RF_5M_SIMILARITY = [
   },
 ];
 
+const MATRICES_5M_SIMILARITY = [
+  {
+    sim: "Similar 1",
+    items: [
+      {
+        question: "If $A = \\begin{bmatrix} -2 \\\\ 4 \\\\ 5 \\end{bmatrix}$ and $B = \\begin{bmatrix} 1 & 3 & -6 \\end{bmatrix}$, verify that $(AB)' = B'A'$.",
+        difficulty: "medium",
+        marks: "5 marks",
+        imp: true,
+        repetitions: [
+          { year: "2027", exam: "Model 2" },
+          { year: "2027", exam: "Model 3" },
+          { year: "2026", exam: "Exam 1" },
+          { year: "2026", exam: "Exam 2" },
+          { year: "2025", exam: "Exam 1" },
+        ],
+        total: 5,
+        answer: "Calculate AB:\n$AB = \\begin{bmatrix} -2 \\\\ 4 \\\\ 5 \\end{bmatrix} \\begin{bmatrix} 1 & 3 & -6 \\end{bmatrix} = \\begin{bmatrix} -2 & -6 & 12 \\\\ 4 & 12 & -24 \\\\ 5 & 15 & -30 \\end{bmatrix}$\n\nFind (AB)':\n$(AB)' = \\begin{bmatrix} -2 & 4 & 5 \\\\ -6 & 12 & 15 \\\\ 12 & -24 & -30 \\end{bmatrix}$\n\nCalculate B'A':\n$B' = \\begin{bmatrix} 1 \\\\ 3 \\\\ -6 \\end{bmatrix}$ and $A' = \\begin{bmatrix} -2 & 4 & 5 \\end{bmatrix}$\n$B'A' = \\begin{bmatrix} 1 \\\\ 3 \\\\ -6 \\end{bmatrix} \\begin{bmatrix} -2 & 4 & 5 \\end{bmatrix} = \\begin{bmatrix} -2 & 4 & 5 \\\\ -6 & 12 & 15 \\\\ 12 & -24 & -30 \\end{bmatrix}$\n\nConclusion: Since $(AB)' = B'A'$, it is verified.",
+      },
+    ],
+  },
+  {
+    sim: "Similar 2",
+    items: [
+      {
+        question: "If $A = \\begin{bmatrix} 0 & 6 & 7 \\\\ -6 & 0 & 8 \\\\ 7 & -8 & 0 \\end{bmatrix}$, $B = \\begin{bmatrix} 0 & 1 & 1 \\\\ 1 & 0 & 2 \\\\ 1 & 2 & 0 \\end{bmatrix}$ and $C = \\begin{bmatrix} 2 \\\\ -2 \\\\ 3 \\end{bmatrix}$, calculate $AC, BC$ and $(A+B)C$. Also verify that $(A+B)C = AC + BC$.",
+        difficulty: "medium",
+        marks: "5 marks",
+        imp: true,
+        repetitions: [
+          { year: "2027", exam: "Model 1" },
+          { year: "2025", exam: "Exam 2" },
+          { year: "2023", exam: "Main" },
+        ],
+        total: 3,
+        answer: "Calculate AC:\n$AC = \\begin{bmatrix} 9 \\\\ 12 \\\\ 30 \\end{bmatrix}$\n\nCalculate BC:\n$BC = \\begin{bmatrix} 1 \\\\ 8 \\\\ -2 \\end{bmatrix}$\n\nCalculate (A+B)C:\n$A+B = \\begin{bmatrix} 0 & 7 & 8 \\\\ -5 & 0 & 10 \\\\ 8 & -6 & 0 \\end{bmatrix}$, so $(A+B)C = \\begin{bmatrix} 10 \\\\ 20 \\\\ 28 \\end{bmatrix}$\n\nVerify: $AC + BC = \\begin{bmatrix} 9 \\\\ 12 \\\\ 30 \\end{bmatrix} + \\begin{bmatrix} 1 \\\\ 8 \\\\ -2 \\end{bmatrix} = \\begin{bmatrix} 10 \\\\ 20 \\\\ 28 \\end{bmatrix}$.\nSince $(A+B)C = AC + BC$, it is verified.",
+      },
+    ],
+  },
+  {
+    sim: "Similar 3",
+    items: [
+      {
+        question: "If $A = \\begin{bmatrix} 1 & 2 & -3 \\\\ 5 & 0 & 2 \\\\ 1 & -1 & 1 \\end{bmatrix}$, $B = \\begin{bmatrix} 3 & -1 & 2 \\\\ 4 & 2 & 5 \\\\ 2 & 0 & 3 \\end{bmatrix}$, $C = \\begin{bmatrix} 4 & 1 & 2 \\\\ 0 & 3 & 2 \\\\ 1 & -2 & 3 \\end{bmatrix}$, then compute $(A+B)$ and $(B-C)$. Also verify that $A + (B-C) = (A+B) - C$.",
+        difficulty: "easy",
+        marks: "5 marks",
+        repetitions: [
+          { year: "2024", exam: "Exam 1" },
+          { year: "2024", exam: "Exam 2" },
+          { year: "2023", exam: "Supplement" },
+        ],
+        total: 3,
+        answer: "Compute A+B:\n$A+B = \\begin{bmatrix} 4 & 1 & -1 \\\\ 9 & 2 & 7 \\\\ 3 & -1 & 4 \\end{bmatrix}$\n\nCompute B-C:\n$B-C = \\begin{bmatrix} -1 & -2 & 0 \\\\ 4 & -1 & 3 \\\\ 1 & 2 & 0 \\end{bmatrix}$\n\nCompute A+(B-C):\n$A+(B-C) = \\begin{bmatrix} 0 & 0 & -3 \\\\ 9 & -1 & 5 \\\\ 2 & 1 & 1 \\end{bmatrix}$\n\nCompute (A+B)-C:\n$(A+B)-C = \\begin{bmatrix} 0 & 0 & -3 \\\\ 9 & -1 & 5 \\\\ 2 & 1 & 1 \\end{bmatrix}$\n\nConclusion: Since $A + (B-C) = (A+B) - C$, it is verified.",
+      },
+    ],
+  },
+  {
+    sim: "Similar 4",
+    items: [
+      {
+        question: "If $A = \\begin{bmatrix} 3 & \\sqrt{3} & 2 \\\\ 4 & 2 & 0 \\end{bmatrix}$ and $B = \\begin{bmatrix} 2 & -1 & 2 \\\\ 1 & 2 & 4 \\end{bmatrix}$, then verify that $(A+B)' = A' + B'$.",
+        difficulty: "easy",
+        marks: "5 marks",
+        repetitions: [
+          { year: "2027", exam: "Model 5" },
+          { year: "2024", exam: "Exam 3" },
+        ],
+        total: 2,
+        answer: "Compute A+B:\n$A+B = \\begin{bmatrix} 5 & \\sqrt{3}-1 & 4 \\\\ 5 & 4 & 4 \\end{bmatrix}$\n\nCompute (A+B)':\n$(A+B)' = \\begin{bmatrix} 5 & 5 \\\\ \\sqrt{3}-1 & 4 \\\\ 4 & 4 \\end{bmatrix}$\n\nCompute A' + B':\n$A' = \\begin{bmatrix} 3 & 4 \\\\ \\sqrt{3} & 2 \\\\ 2 & 0 \\end{bmatrix}$ and $B' = \\begin{bmatrix} 2 & 1 \\\\ -1 & 2 \\\\ 2 & 4 \\end{bmatrix}$, so $A' + B' = \\begin{bmatrix} 5 & 5 \\\\ \\sqrt{3}-1 & 4 \\\\ 4 & 4 \\end{bmatrix}$\n\nConclusion: Since $(A+B)' = A' + B'$, it is verified.",
+      },
+    ],
+  },
+  {
+    sim: "Similar 5",
+    items: [
+      {
+        question: "If $A = \\begin{bmatrix} 1 & 2 & 3 \\\\ 3 & -2 & 1 \\\\ 4 & 2 & 1 \\end{bmatrix}$, then show that $A^3 - 23A - 40I = O$.",
+        difficulty: "medium",
+        marks: "5 marks",
+        imp: true,
+        repetitions: [{ year: "2027", exam: "Model 4" }],
+        total: 1,
+        answer: "Calculate $A^2$:\n$A^2 = \\begin{bmatrix} 19 & 4 & 8 \\\\ 1 & 12 & 8 \\\\ 14 & 6 & 15 \\end{bmatrix}$\n\nCalculate $A^3$:\n$A^3 = \\begin{bmatrix} 63 & 46 & 69 \\\\ 69 & -6 & 23 \\\\ 92 & 46 & 63 \\end{bmatrix}$\n\nCalculate 23A:\n$23A = \\begin{bmatrix} 23 & 46 & 69 \\\\ 69 & -46 & 23 \\\\ 92 & 46 & 23 \\end{bmatrix}$\n\nThen $A^3 - 23A = \\begin{bmatrix} 40 & 0 & 0 \\\\ 0 & 40 & 0 \\\\ 0 & 0 & 40 \\end{bmatrix} = 40I$.\n\nConclusion: $A^3 - 23A - 40I = 40I - 40I = O$. Hence shown.",
+      },
+    ],
+  },
+  {
+    sim: "Similar 6",
+    items: [
+      {
+        question: "If $A = \\begin{bmatrix} 0 & 6 & 7 \\\\ -6 & 0 & 8 \\\\ 7 & -8 & 0 \\end{bmatrix}$, $B = \\begin{bmatrix} 0 & 1 & 1 \\\\ 1 & 0 & 2 \\\\ 1 & 2 & 0 \\end{bmatrix}$ and $C = \\begin{bmatrix} 2 \\\\ -2 \\\\ 3 \\end{bmatrix}$, calculate $AC, BC$ and $(A-B)C$. Also verify that $(A-B)C = AC - BC$.",
+        difficulty: "easy",
+        marks: "5 marks",
+        repetitions: [{ year: "2025", exam: "Exam 3" }],
+        total: 1,
+        answer: "Calculate AC:\n$AC = \\begin{bmatrix} 9 \\\\ 12 \\\\ 30 \\end{bmatrix}$\n\nCalculate BC:\n$BC = \\begin{bmatrix} 1 \\\\ 8 \\\\ -2 \\end{bmatrix}$\n\nCalculate (A-B)C:\n$A-B = \\begin{bmatrix} 0 & 5 & 6 \\\\ -7 & 0 & 6 \\\\ 6 & -10 & 0 \\end{bmatrix}$, so $(A-B)C = \\begin{bmatrix} 8 \\\\ 4 \\\\ 32 \\end{bmatrix}$\n\nVerify: $AC - BC = \\begin{bmatrix} 9 \\\\ 12 \\\\ 30 \\end{bmatrix} - \\begin{bmatrix} 1 \\\\ 8 \\\\ -2 \\end{bmatrix} = \\begin{bmatrix} 8 \\\\ 4 \\\\ 32 \\end{bmatrix}$.\nSince $(A-B)C = AC - BC$, it is verified.",
+      },
+    ],
+  },
+];
+
 export const SIMILARITY_BANK = {
+  "Matrices:5m": MATRICES_5M_SIMILARITY,
+  "Matrices:5M": MATRICES_5M_SIMILARITY,
   "Relations and Functions:5m": RF_5M_SIMILARITY,
   "Relations and Functions:5M": RF_5M_SIMILARITY,
   "Electric Charges and Fields:numeric": ECF_NUMERIC,
