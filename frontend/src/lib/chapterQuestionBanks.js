@@ -26,6 +26,10 @@ import { INVTRIG_MCQ } from "@/lib/invTrigFbk";
 const ECF_MCQ_ONLY = ECF_MCQ.filter((page) => page[0]?.year !== "Fill in the Blanks");
 const ECF_FBK_ONLY = ECF_MCQ.filter((page) => page[0]?.year === "Fill in the Blanks");
 
+// Solutions (Chemistry) — same MCQ / FBK split.
+const SOLUTIONS_MCQ_ONLY = SOLUTIONS_MCQ.filter((page) => page[0]?.year !== "Fill in the Blanks");
+const SOLUTIONS_FBK_ONLY = SOLUTIONS_MCQ.filter((page) => page[0]?.year === "Fill in the Blanks");
+
 export const CHAPTER_QUESTION_BANKS = {
   // Relations and Functions · 5 Mark — shared by both flows (label + chapter-no keys)
   "math:Relations and Functions:5m": RF_5M_PAGES,
@@ -168,8 +172,8 @@ export const CHAPTER_QUESTION_BANKS = {
   // ===== Chemistry — Solutions · 1 Mark MCQs (Part A) =====
   "chemistry:Solutions:A": SOLUTIONS_MCQ,
   "chemistry:1:A": SOLUTIONS_MCQ,
-  "chemistry:Solutions:mcq": SOLUTIONS_MCQ,
-  "chemistry:Solutions:fbk": SOLUTIONS_MCQ,
+  "chemistry:Solutions:mcq": SOLUTIONS_MCQ_ONLY,
+  "chemistry:Solutions:fbk": SOLUTIONS_FBK_ONLY,
 
   // ===== Maths — Relations and Functions · 1 Mark MCQs (Part A) =====
   "math:Relations and Functions:A": RF_MCQ,
