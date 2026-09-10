@@ -108,12 +108,12 @@ const PHYSICS_CHAPTERS = {
   "2m": [
     { q: 21, label: "Electric Charges & Fields" },
     { q: 22, label: "Electrostatic Potential & Capacitance" },
-    { q: 23, label: "Current Electricity" },
-    { q: 24, label: "Moving Charges & Magnetism" },
-    { q: 25, label: "Electromagnetic Induction" },
-    { q: 26, label: "Electromagnetic Waves" },
-    { q: 27, label: "Atoms" },
-    { q: 28, label: "Semiconductor Electronics" },
+    { q: 23, label: "Current Electricity", locked: true },
+    { q: 24, label: "Moving Charges & Magnetism", locked: true },
+    { q: 25, label: "Electromagnetic Induction", locked: true },
+    { q: 26, label: "Electromagnetic Waves", locked: true },
+    { q: 27, label: "Atoms", locked: true },
+    { q: 28, label: "Semiconductor Electronics", locked: true },
   ],
   "3m": [
     { q: 29, label: "Electric Charges & Fields" },
@@ -268,11 +268,13 @@ export default function QuestionPatterns() {
     || null;
   const freeCount = (explicitList && !isMath6p4 && !FULLY_UNLOCKED.includes(subjectId)) ? FREE_COUNT[subjectId]?.[activePattern] : undefined;
   const trialSubject = TRIAL_SUBJECTS.includes(subjectId) && !FULLY_UNLOCKED.includes(subjectId);
-  // Generic groups block: MCQ/FBK free only the first group; Maths 2M/3M/5M are
-  // fully unlocked; everything else beyond the per-pattern count is locked.
-  const groupFreeCount = (FULLY_UNLOCKED.includes(subjectId) || (subjectId === "math" && ["2m", "3m", "5m"].includes(activePattern)))
+  // Generic groups block: MCQ/FBK free only the first group; Maths 2M/3M/5M lock
+  // all chapters except the first two; everything else uses the per-pattern count.
+  const groupFreeCount = FULLY_UNLOCKED.includes(subjectId)
     ? undefined
-    : (isMcqFbk ? 1 : FREE_COUNT[subjectId]?.[activePattern]);
+    : (subjectId === "math" && ["2m", "3m", "5m"].includes(activePattern))
+      ? 2
+      : (isMcqFbk ? 1 : FREE_COUNT[subjectId]?.[activePattern]);
   const countFrac = activeMeta?.count && /\bof\b/i.test(activeMeta.count)
     ? activeMeta.count.replace(/\s*of\s*/i, "/")
     : null;
