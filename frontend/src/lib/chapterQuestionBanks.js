@@ -43,6 +43,14 @@ export const CHAPTER_QUESTION_BANKS = {
   "math:2:2m": MATH_2M["Inverse Trigonometric Functions"],
   "math:Determinants:2m": MATH_2M["Determinants"],
   "math:4:2m": MATH_2M["Determinants"],
+  "math:Continuity & Differentiability:2m": MATH_2M["Continuity & Differentiability"],
+  "math:Continuity and Differentiability:2m": MATH_2M["Continuity & Differentiability"],
+  "math:Application of Derivatives:2m": MATH_2M["Application of Derivatives"],
+  "math:Integrals:2m": MATH_2M["Integrals"],
+  "math:Differential Equations:2m": MATH_2M["Differential Equations"],
+  "math:Vector Algebra:2m": MATH_2M["Vector Algebra"],
+  "math:Three Dimensional Geometry:2m": MATH_2M["Three Dimensional Geometry"],
+  "math:Probability:2m": MATH_2M["Probability"],
 
   // Math Part C (3 Mark) chapters — label + chapter-no keys for both flows.
   "math:Relations and Functions:3m": MATH_3M["Relations and Functions"],
