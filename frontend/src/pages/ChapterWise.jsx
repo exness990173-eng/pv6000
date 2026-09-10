@@ -44,7 +44,8 @@ export default function ChapterWise() {
         {chapters.length ? (
           <div data-testid="chapterwise-list" className="space-y-3">
             {chapters.map((c, i) => {
-              const isFree = ALL_UNLOCKED.includes(subjectId) || (FREE_CHAPTERS[subjectId] || []).includes(c.ch);
+              // Only the 1st chapter is unlocked; every other chapter is locked.
+              const isFree = i === 0;
               return (
                 <button
                   key={c.ch}
