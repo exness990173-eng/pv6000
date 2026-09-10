@@ -25,6 +25,12 @@ export const Header = ({ showBack = false, title, subtitle, Icon, bgClass = "bg-
     }
     // /subject/:id  -> subject board
     if (parts[0] === "subject" && parts.length === 2) { navigate("/board"); return; }
+    // /subject/:id/questions?type=... -> back to the pattern's chapter picker (keep pattern selected)
+    if (parts[0] === "subject" && parts[2] === "questions") {
+      const type = new URLSearchParams(location.search).get("type");
+      navigate(`/subject/${parts[1]}/patterns${type ? `?type=${type}` : ""}`);
+      return;
+    }
     // /subject/:id/section[/:x] -> drop the last segment (one level up)
     if (parts.length >= 3) { navigate("/" + parts.slice(0, parts.length - 1).join("/")); return; }
     // /board -> home

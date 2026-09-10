@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Lock, Check, X, Crown } from "lucide-react";
 
 const PLANS = [
-  { id: "1m", label: "1 Month", months: 1, price: 30, tag: null },
   { id: "2m", label: "2 Months", months: 2, price: 50, tag: "Popular" },
   { id: "5m", label: "5 Months", months: 5, price: 100, tag: "Best Value" },
+  { id: "april", label: "Till April", months: null, price: 150, tag: null },
 ];
 
 export const SubscriptionPaywall = ({ subjectName = "this subject", onClose = () => {} }) => {
