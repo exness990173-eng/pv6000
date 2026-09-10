@@ -784,6 +784,11 @@ const RF_5M_SIMILARITY = [
         total: 3,
         answer: "One-One: Let $f(x_1) = f(x_2) \\Rightarrow \\frac{x_1-2}{x_1-3} = \\frac{x_2-2}{x_2-3}$. Cross-multiplying and simplifying gives $x_1 = x_2$. So $f$ is one-one.\n\nOnto: Let $y \\in B$ ($y \\neq 1$). Then $y = \\frac{x-2}{x-3} \\Rightarrow x = \\frac{3y-2}{y-1}$, which is defined since $y \\neq 1$, and $x \\neq 3$. So $f$ is onto.\n\nConclusion: $f$ is one-one and onto.\n\n$f^{-1}(y) = \\frac{3y-2}{y-1}$.",
       },
+    ],
+  },
+  {
+    sim: "Similar 3",
+    items: [
       {
         question: "State whether the function $f: R \\to R$ defined by $f(x) = 3 - 4x$ is one-one, onto or bijective. Justify your answer.",
         difficulty: "easy",
@@ -795,6 +800,11 @@ const RF_5M_SIMILARITY = [
         total: 2,
         answer: "One-One: $f(x_1) = f(x_2) \\Rightarrow 3 - 4x_1 = 3 - 4x_2 \\Rightarrow x_1 = x_2$. So $f$ is one-one.\n\nOnto: Let $y \\in R$. Then $3 - 4x = y \\Rightarrow x = \\frac{3-y}{4} \\in R$. So $f$ is onto.\n\nConclusion: $f$ is bijective.",
       },
+    ],
+  },
+  {
+    sim: "Similar 4",
+    items: [
       {
         question: "Consider $f: R \\to R$ defined by $f(x) = 10x + 7$. Show that $f$ is invertible. Also write the inverse of $f$.",
         difficulty: "easy",
@@ -803,6 +813,11 @@ const RF_5M_SIMILARITY = [
         total: 1,
         answer: "One-One: $f(x_1) = f(x_2) \\Rightarrow 10x_1 + 7 = 10x_2 + 7 \\Rightarrow x_1 = x_2$. So $f$ is one-one.\n\nOnto: Let $y \\in R$. Then $10x + 7 = y \\Rightarrow x = \\frac{y-7}{10} \\in R$. So $f$ is onto.\n\nConclusion: $f$ is invertible, and $f^{-1}(y) = \\frac{y-7}{10}$.",
       },
+    ],
+  },
+  {
+    sim: "Similar 5",
+    items: [
       {
         question: "If $f: R \\to R$ is defined by $f(x) = 1 + x^2$, then show that $f$ is neither one-one nor onto.",
         difficulty: "easy",
@@ -811,6 +826,11 @@ const RF_5M_SIMILARITY = [
         total: 1,
         answer: "Not One-One: $f(1) = 1 + 1 = 2$ and $f(-1) = 1 + 1 = 2$, but $1 \\neq -1$. So $f$ is not one-one.\n\nNot Onto: Since $x^2 \\ge 0$, $f(x) = 1 + x^2 \\ge 1$, so range $= [1, \\infty) \\neq R$ (e.g. no $x$ gives $f(x) = 0$). So $f$ is not onto.\n\nConclusion: $f$ is neither one-one nor onto.",
       },
+    ],
+  },
+  {
+    sim: "Similar 6",
+    items: [
       {
         question: "Show that the function $f: R_* \\to R_*$ defined by $f(x) = \\frac{1}{x}$ is one-one and onto, where $R_*$ is the set of all non-zero real numbers.",
         difficulty: "easy",
