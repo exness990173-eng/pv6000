@@ -746,7 +746,86 @@ const ECF_3M = [
   },
 ];
 
+const RF_5M_SIMILARITY = [
+  {
+    sim: "Similar 1",
+    items: [
+      {
+        question: "Let $f: N \\to Y$ be a function defined as $f(x) = 4x + 3$, where $Y = \\{y \\in N : y = 4x + 3 \\text{ for some } x \\in N\\}$. Show that $f$ is invertible. Find the inverse of $f$. (Note: In 2026 Exam 1 and 2027 Model 2, the domain and codomain are $R \\to R$ instead of $N \\to Y$).",
+        difficulty: "medium",
+        marks: "5 marks",
+        imp: true,
+        repetitions: [
+          { year: "2023", exam: "Main" },
+          { year: "2023", exam: "Supplement" },
+          { year: "2024", exam: "Exam 1" },
+          { year: "2024", exam: "Exam 2" },
+          { year: "2024", exam: "Exam 3" },
+          { year: "2026", exam: "Exam 1" },
+          { year: "2027", exam: "Model 2" },
+        ],
+        total: 7,
+        answer: "One-One (Injective):\nLet $x_1, x_2 \\in N$ (or $R$) such that $f(x_1) = f(x_2)$.\n$\\Rightarrow 4x_1 + 3 = 4x_2 + 3 \\Rightarrow 4x_1 = 4x_2 \\Rightarrow x_1 = x_2$.\nTherefore, $f$ is one-one.\n\nOnto (Surjective):\nFor the $N \\to Y$ version: $Y$ is the set of all images of $x \\in N$, so every element of $Y$ has a pre-image in $N$. Hence $f$ is onto.\nFor the $R \\to R$ version: Let $y \\in R$. Then $4x + 3 = y \\Rightarrow x = \\frac{y-3}{4} \\in R$. Thus $f$ is onto.\n\nConclusion: Since $f$ is one-one and onto, it is invertible.\n\nInverse: Let $y = 4x + 3 \\Rightarrow x = \\frac{y-3}{4}$. Therefore $f^{-1}(y) = \\frac{y-3}{4}$.",
+      },
+    ],
+  },
+  {
+    sim: "Similar 2",
+    items: [
+      {
+        question: "Let $A = R - \\{3\\}$ and $B = R - \\{1\\}$. Consider the function $f: A \\to B$ defined by $f(x) = \\frac{x-2}{x-3}$. Is $f$ one-one and onto? Justify your answer. (Note: 2025 Exam 3 also asks to find $f^{-1}$).",
+        difficulty: "easy",
+        marks: "5 marks",
+        repetitions: [
+          { year: "2025", exam: "Exam 1" },
+          { year: "2025", exam: "Exam 3" },
+          { year: "2027", exam: "Model 5" },
+        ],
+        total: 3,
+        answer: "One-One: Let $f(x_1) = f(x_2) \\Rightarrow \\frac{x_1-2}{x_1-3} = \\frac{x_2-2}{x_2-3}$. Cross-multiplying and simplifying gives $x_1 = x_2$. So $f$ is one-one.\n\nOnto: Let $y \\in B$ ($y \\neq 1$). Then $y = \\frac{x-2}{x-3} \\Rightarrow x = \\frac{3y-2}{y-1}$, which is defined since $y \\neq 1$, and $x \\neq 3$. So $f$ is onto.\n\nConclusion: $f$ is one-one and onto.\n\n$f^{-1}(y) = \\frac{3y-2}{y-1}$.",
+      },
+      {
+        question: "State whether the function $f: R \\to R$ defined by $f(x) = 3 - 4x$ is one-one, onto or bijective. Justify your answer.",
+        difficulty: "easy",
+        marks: "5 marks",
+        repetitions: [
+          { year: "2025", exam: "Exam 2" },
+          { year: "2027", exam: "Model 1" },
+        ],
+        total: 2,
+        answer: "One-One: $f(x_1) = f(x_2) \\Rightarrow 3 - 4x_1 = 3 - 4x_2 \\Rightarrow x_1 = x_2$. So $f$ is one-one.\n\nOnto: Let $y \\in R$. Then $3 - 4x = y \\Rightarrow x = \\frac{3-y}{4} \\in R$. So $f$ is onto.\n\nConclusion: $f$ is bijective.",
+      },
+      {
+        question: "Consider $f: R \\to R$ defined by $f(x) = 10x + 7$. Show that $f$ is invertible. Also write the inverse of $f$.",
+        difficulty: "easy",
+        marks: "5 marks",
+        repetitions: [{ year: "2026", exam: "Exam 2" }],
+        total: 1,
+        answer: "One-One: $f(x_1) = f(x_2) \\Rightarrow 10x_1 + 7 = 10x_2 + 7 \\Rightarrow x_1 = x_2$. So $f$ is one-one.\n\nOnto: Let $y \\in R$. Then $10x + 7 = y \\Rightarrow x = \\frac{y-7}{10} \\in R$. So $f$ is onto.\n\nConclusion: $f$ is invertible, and $f^{-1}(y) = \\frac{y-7}{10}$.",
+      },
+      {
+        question: "If $f: R \\to R$ is defined by $f(x) = 1 + x^2$, then show that $f$ is neither one-one nor onto.",
+        difficulty: "easy",
+        marks: "5 marks",
+        repetitions: [{ year: "2027", exam: "Model 3" }],
+        total: 1,
+        answer: "Not One-One: $f(1) = 1 + 1 = 2$ and $f(-1) = 1 + 1 = 2$, but $1 \\neq -1$. So $f$ is not one-one.\n\nNot Onto: Since $x^2 \\ge 0$, $f(x) = 1 + x^2 \\ge 1$, so range $= [1, \\infty) \\neq R$ (e.g. no $x$ gives $f(x) = 0$). So $f$ is not onto.\n\nConclusion: $f$ is neither one-one nor onto.",
+      },
+      {
+        question: "Show that the function $f: R_* \\to R_*$ defined by $f(x) = \\frac{1}{x}$ is one-one and onto, where $R_*$ is the set of all non-zero real numbers.",
+        difficulty: "easy",
+        marks: "5 marks",
+        repetitions: [{ year: "2027", exam: "Model 4" }],
+        total: 1,
+        answer: "One-One: $f(x_1) = f(x_2) \\Rightarrow \\frac{1}{x_1} = \\frac{1}{x_2} \\Rightarrow x_1 = x_2$. So $f$ is one-one.\n\nOnto: Let $y \\in R_*$ ($y \\neq 0$). Then $\\frac{1}{x} = y \\Rightarrow x = \\frac{1}{y} \\in R_*$. So $f$ is onto.\n\nConclusion: $f(x) = \\frac{1}{x}$ is one-one and onto.",
+      },
+    ],
+  },
+];
+
 export const SIMILARITY_BANK = {
+  "Relations and Functions:5m": RF_5M_SIMILARITY,
+  "Relations and Functions:5M": RF_5M_SIMILARITY,
   "Electric Charges and Fields:numeric": ECF_NUMERIC,
   "Electric Charges & Fields:numeric": ECF_NUMERIC,
   "Electric Charges and Fields:5m": ECF_5M_THEORY,
