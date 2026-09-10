@@ -157,14 +157,14 @@ const CHEMISTRY_CHAPTERS = {
     { q: 30, label: "Coordination Compounds" },
   ],
   "3m-phys": [
-    { q: 31, label: "Solutions" },
-    { q: 32, label: "Electrochemistry" },
-    { q: 33, label: "Electrochemistry" },
+    { q: 31, label: "Solutions", locked: true },
+    { q: 32, label: "Electrochemistry", locked: true },
+    { q: 33, label: "Electrochemistry", locked: true },
     { q: 34, label: "Chemical Kinetics" },
   ],
   "5m-org": [
     { q: 35, label: "Haloalkanes & Haloarenes" },
-    { q: 36, label: "Alcohols, Phenols & Ethers" },
+    { q: 36, label: "Alcohols, Phenols & Ethers", locked: true },
     { q: 37, label: "Aldehydes, Ketones & Carboxylic Acids" },
     { q: 38, label: "Aldehydes, Ketones & Carboxylic Acids" },
     { q: 39, label: "Amines" },
@@ -441,7 +441,7 @@ export default function QuestionPatterns() {
           <div className="rounded-r-3xl border-y-2 border-r-2 border-slate-400 py-3 pl-1 pr-16">
             <div className="space-y-2.5">
               {explicitList.map((c, ci) => {
-                const itemLocked = freeCount != null && ci >= freeCount;
+                const itemLocked = (freeCount != null && ci >= freeCount) || c.locked;
                 return c.options ? (
                   <div
                     key={c.q}
