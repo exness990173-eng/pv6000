@@ -21,6 +21,11 @@ import { SOLUTIONS_MCQ } from "@/lib/solutionsMcq";
 import { RF_MCQ } from "@/lib/relationsMcq";
 import { INVTRIG_MCQ } from "@/lib/invTrigFbk";
 
+// Electric Charges & Fields — split the combined bank into MCQ-only and FBK-only
+// pages so the MCQ and FBK tabs show separate content.
+const ECF_MCQ_ONLY = ECF_MCQ.filter((page) => page[0]?.year !== "Fill in the Blanks");
+const ECF_FBK_ONLY = ECF_MCQ.filter((page) => page[0]?.year === "Fill in the Blanks");
+
 export const CHAPTER_QUESTION_BANKS = {
   // Relations and Functions · 5 Mark — shared by both flows (label + chapter-no keys)
   "math:Relations and Functions:5m": RF_5M_PAGES,
@@ -155,10 +160,10 @@ export const CHAPTER_QUESTION_BANKS = {
   "physics:Electric Charges & Fields:A": ECF_MCQ,
   "physics:Electric Charges and Fields:A": ECF_MCQ,
   "physics:1:A": ECF_MCQ,
-  "physics:Electric Charges & Fields:mcq": ECF_MCQ,
-  "physics:Electric Charges and Fields:mcq": ECF_MCQ,
-  "physics:Electric Charges & Fields:fbk": ECF_MCQ,
-  "physics:Electric Charges and Fields:fbk": ECF_MCQ,
+  "physics:Electric Charges & Fields:mcq": ECF_MCQ_ONLY,
+  "physics:Electric Charges and Fields:mcq": ECF_MCQ_ONLY,
+  "physics:Electric Charges & Fields:fbk": ECF_FBK_ONLY,
+  "physics:Electric Charges and Fields:fbk": ECF_FBK_ONLY,
 
   // ===== Chemistry — Solutions · 1 Mark MCQs (Part A) =====
   "chemistry:Solutions:A": SOLUTIONS_MCQ,
