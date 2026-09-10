@@ -66,6 +66,12 @@ const RANGE_GROUPS = {
 
 // Maths — explicit chapter list with question numbers per part (from official MQP order)
 const MATH_CHAPTERS = {
+  "mcq": [
+    { q: 1, label: "Relations and Functions" },
+  ],
+  "fbk": [
+    { q: 1, label: "Inverse Trigonometric Functions" },
+  ],
   "2m": [
     { q: 21, label: "Inverse Trigonometric Functions" },
     { q: 22, label: "Determinants" },
@@ -105,6 +111,12 @@ const MATH_CHAPTERS = {
 
 // Physics — explicit chapter list with question numbers per Part (from official MQP order)
 const PHYSICS_CHAPTERS = {
+  "mcq": [
+    { q: 1, label: "Electric Charges & Fields" },
+  ],
+  "fbk": [
+    { q: 1, label: "Electric Charges & Fields" },
+  ],
   "2m": [
     { q: 21, label: "Electric Charges & Fields" },
     { q: 22, label: "Electrostatic Potential & Capacitance" },
@@ -142,6 +154,12 @@ const PHYSICS_CHAPTERS = {
 
 // Chemistry — explicit chapter list with question numbers per Part (from official MQP order)
 const CHEMISTRY_CHAPTERS = {
+  "mcq": [
+    { q: 1, label: "Solutions" },
+  ],
+  "fbk": [
+    { q: 1, label: "Solutions" },
+  ],
   "2m": [
     { q: 21, label: "Chemical Kinetics" },
     { q: 22, label: "d & f Block Elements" },
@@ -243,9 +261,15 @@ export default function QuestionPatterns() {
         .map((r) => ({ key: r.chapter, label: r.chapter, count: r.vals[partKey], match: (q) => q.chapter === r.chapter }))
     : [];
 
-  // MCQ & FBK -> chapter RANGE groups (Physics/Chemistry/Maths); other tabs -> per-chapter list
+  // MCQ & FBK -> chapter RANGE groups (Physics/Chemistry/Maths); other tabs -> per-chapter list.
+  // When an explicit chapter list is defined for this MCQ/FBK tab, use that instead of ranges.
   const isMcqFbk = activePattern === "mcq" || activePattern === "fbk";
-  const rangeGroups = isMcqFbk && RANGE_GROUPS[subjectId]
+  const hasExplicitMcqFbk = isMcqFbk && (
+    (subjectId === "physics" && PHYSICS_CHAPTERS[activePattern]) ||
+    (subjectId === "chemistry" && CHEMISTRY_CHAPTERS[activePattern]) ||
+    (subjectId === "math" && MATH_CHAPTERS[activePattern])
+  );
+  const rangeGroups = isMcqFbk && RANGE_GROUPS[subjectId] && !hasExplicitMcqFbk
     ? RANGE_GROUPS[subjectId].map((r) => ({
         key: r.key, label: r.label, note: r.note, hideCount: true,
         match: (q) => { const n = CHAPTER_NO[q.chapter] || 0; return n >= r.min && n <= r.max; },
